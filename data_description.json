@@ -1,0 +1,42 @@
+{
+  "dataset": "philippines_enrollment_gdp.csv",
+  "title": "Philippines primary education enrollment and GDP per capita, 2001-2020",
+  "description": "One row per year showing the number of pupils enrolled in primary education in the Philippines side by side with GDP per capita, used to examine whether primary enrollment increased as GDP per capita improved.",
+  "country": "Philippines",
+  "country_code": "PHL",
+  "time_period": "2001-2020",
+  "number_of_rows": 20,
+  "number_of_columns": 3,
+  "source": "World Bank, World Development Indicators (files API_SE.PRM.ENRL_DS2_en_csv_v2_4538564.zip and WDI_csv.zip)",
+  "related_files": {
+    "database": "philippines_enrollment_gdp.db",
+    "database_type": "SQLite",
+    "table": "enrollment_gdp"
+  },
+  "columns": [
+    {
+      "name": "Year",
+      "data_type": "integer",
+      "sql_type": "INTEGER (primary key)",
+      "meaning": "Calendar year of the observation. Each year from 2001 to 2020 appears exactly once.",
+      "missing_values": 0
+    },
+    {
+      "name": "Primary Enrollment",
+      "data_type": "float",
+      "sql_type": "REAL",
+      "unit": "number of pupils",
+      "meaning": "Total number of pupils enrolled in primary education in the Philippines in that year (World Bank indicator SE.PRM.ENRL, 'Primary education, pupils').",
+      "missing_values": 4,
+      "missing_values_note": "No figure was reported for 2010, 2011, 2012 and 2013. These are left empty in the CSV and stored as NULL in the database; they were not estimated."
+    },
+    {
+      "name": "GDP",
+      "data_type": "float",
+      "sql_type": "REAL",
+      "unit": "current US dollars per person",
+      "meaning": "GDP per capita of the Philippines in that year, in current US dollars (World Bank indicator NY.GDP.PCAP.CD, 'GDP per capita (current US$)').",
+      "missing_values": 0
+    }
+  ]
+}
